@@ -1,0 +1,12 @@
+
+<td class="aligne"><img src="{{cover}}" alt="cover du livre" class="image"></td>
+<td class="aligne"> {{author}} </td>
+<td class="aligne"> {{title}} </td>
+<td class="aligne"> {{status}} </td>
+<td class="aligne">
+    <button
+    type="button"
+    class="btn btn-dark"
+    (click)="onClickSwitchBookStatus(nextStatus)"
+    >Basculer en {{ nextStatus }}</button>
+</td>

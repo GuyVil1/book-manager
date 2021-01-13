@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookService } from './services/book/book.service';
 import { TableRowComponent } from './components/table-row/table-row.component';
+import { BooksViewComponent } from './views/books-view/books-view.component';
+import { ErrorViewComponent } from './views/error-view/error-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableRowComponent
+    TableRowComponent,
+    BooksViewComponent,
+    ErrorViewComponent
   ],
   imports: [
     BrowserModule,

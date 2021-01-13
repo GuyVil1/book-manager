@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card my-5">
+                <div class="card-body">
+                    <h5 class="card-title">Connexion</h5>
+                    <form action="">
+                        
+                        <input class="form-control" type="email" placeholder="email">
+                        <input type="password" class="mt-3 form-control" placeholder="mot de passe">
+                        <!-- attention, button type="button" si on met un submit, cela force le rechargement de la 
+                        page et annule l'évenement onclicksignin() -->
+                        <button 
+                            type="button"
+                            class="btn btn-success brn-block btn-lg text-uppercase mt-4 w-100"
+                            (click)="onClickSignIn()"
+                            >Se connecter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

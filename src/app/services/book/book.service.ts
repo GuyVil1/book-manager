@@ -16,6 +16,7 @@ export class BookService {
         cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkgOanCuZAp5Mi3qUJHp0cwnEMTx42nPy_Prf_aMgQTgo8dBYrGcuao_gnw&usqp=CAc",
         title: "livre " + i, 
         author: "auteur " + i,
+        description: "Lorem ipsum",
         status: "Disponible"
       });
     }
@@ -44,5 +45,18 @@ export class BookService {
         break;
       } 
     }
+  }
+
+  /**
+   * Methode pour retrouver un livre grâce à son id
+   * @param bookId 
+   */
+  getElementById(bookId : number){
+    for(const book of this.books){
+      if (book.id === bookId){
+        return book;
+      } 
+    }
+    return null;
   }
 }

@@ -1,0 +1,9 @@
+<div class="container text-center">
+    <h1>Book Manager</h1>
+    <button 
+        *ngIf="isAuth"
+        class="btn btn-dark float-right text-uppercase aligne"
+        (click)="onClickSignOut()"
+        >Se déconnecter</button>
+</div>
+<hr>

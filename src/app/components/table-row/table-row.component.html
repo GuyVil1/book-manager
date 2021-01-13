@@ -6,7 +6,14 @@
 <td class="aligne">
     <button
     type="button"
-    class="btn btn-dark"
+    class="btn btn-dark m-2"
     (click)="onClickSwitchBookStatus(nextStatus)"
     >Basculer en {{ nextStatus }}</button>
+
+    <a class="text-white text-decoration-none btn btn-success m-2"
+        [routerLink]="detailsUrl">
+        Détails
+    </a>
+
+
 </td>

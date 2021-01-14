@@ -16,6 +16,7 @@ export class TableRowComponent implements OnInit, OnChanges {
 
   nextStatus : string;
   detailsUrl: string;
+  editUrl: string;
 
   constructor(private bookService : BookService) {
     this.id = 0;
@@ -26,11 +27,13 @@ export class TableRowComponent implements OnInit, OnChanges {
 
     this.nextStatus = ""; 
     this.detailsUrl = "";
+    this.editUrl = "";
 
    }
 
   ngOnInit(): void {
-    this.detailsUrl = "/book/" + this.id
+    this.detailsUrl = "/book/" + this.id;
+    this.editUrl = "/book/edit/" + this.id;
   }
 
   ngOnChanges(): void{

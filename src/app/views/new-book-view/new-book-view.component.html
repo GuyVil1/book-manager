@@ -1,0 +1,115 @@
+<div class="container text-center">
+    <form 
+        (ngSubmit)="onSubmitNewBook(newBook)"
+        #newBook="ngForm"
+        class="col-lg-6 aligne">
+        <div class="form-group">
+            <label for="title">
+                Titre du livre
+            </label>
+            <!-- Alerte si les conditions lié à l'input title ne sont pas remplie -->
+            <div 
+                *ngIf="title.invalid && (title.dirty || title.touched)"
+                class="alert alert-danger"
+                >
+                <div *ngIf="title.errors.required">
+                    Le titre est requis
+                </div>
+            </div>
+            <input 
+                type="text" 
+                id="title"
+                name="title"
+                class="form-control"
+                [(ngModel)]="book.title"
+                required
+                #title="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="author">
+                Auteur du livre
+            </label>
+            <!-- Alerte si les conditions lié à l'input title ne sont pas remplie -->
+            <div 
+            *ngIf="author.invalid && (author.dirty || author.touched)"
+            class="alert alert-danger"
+            >
+            <div *ngIf="author.errors.required">
+                Le nom de l'auteur est requis
+            </div>
+            </div>
+            <input 
+                type="text" 
+                id="author"
+                name="author"
+                class="form-control"
+                [(ngModel)]="book.author"
+                #author="ngModel"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="cover">
+                cover du livre
+            </label>
+            <!-- Alerte si les conditions lié à l'input title ne sont pas remplie -->
+            <div 
+                *ngIf="cover.invalid && (cover.dirty || cover.touched)"
+                class="alert alert-danger"
+                >
+                <div *ngIf="cover.errors.required">
+                    L'url de la couverture est requise
+                </div>
+            </div>            
+            <input 
+                type="text" 
+                id="cover"
+                name="cover"
+                class="form-control"
+                [(ngModel)]="book.cover"
+                #cover="ngModel"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="description">
+                Decription du livre
+            </label>
+            <!-- Alerte si les conditions lié à l'input title ne sont pas remplie -->
+            <div 
+                *ngIf="description.invalid && (description.dirty || description.touched)"
+                class="alert alert-danger"
+                >
+                <div *ngIf="description.errors.required">
+                    La description est requise
+                </div>
+            </div>
+            <textarea 
+                type="text" 
+                id="description"
+                name="description"
+                class="form-control"
+                [(ngModel)]="book.description"
+                #description="ngModel"
+                required
+                maxlength="1000"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="status">
+                statut du livre
+            </label>
+            <select 
+                name="status" 
+                id="status"
+                class="form-control"
+                [(ngModel)]="book.status"
+                #status="ngModel">
+                <option value="disponible">Disponible</option>
+                <option value="emprunte">Eprunté</option>
+            </select>
+        </div>
+        <button 
+            class="btn btn-primary float-right"
+            [disabled]="newBook.invalid"
+            >AJOUTER LIVRE</button>
+        <a routerLink="/books" class="btn btn-dark float-left">RETOUR</a>
+    </form>
+</div>

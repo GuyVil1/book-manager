@@ -11,6 +11,10 @@ import { BookViewComponent } from './views/book-view/book-view.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthViewComponent } from './views/auth-view/auth-view.component';
 import { AuthService } from './services/auth/auth.service';
+import { NewBookViewComponent } from './views/new-book-view/new-book-view.component';
+import { EditBookViewComponent } from './views/edit-book-view/edit-book-view.component';
+import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +24,14 @@ import { AuthService } from './services/auth/auth.service';
     ErrorViewComponent,
     BookViewComponent,
     HeaderComponent,
-    AuthViewComponent
+    AuthViewComponent,
+    NewBookViewComponent,
+    EditBookViewComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
   ],
   // import de mes services
   providers: [BookService, AuthService],

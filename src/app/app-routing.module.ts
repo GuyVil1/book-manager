@@ -7,6 +7,7 @@ import { BooksViewComponent } from './views/books-view/books-view.component';
 import { EditBookViewComponent } from './views/edit-book-view/edit-book-view.component';
 import { ErrorViewComponent } from './views/error-view/error-view.component';
 import { NewBookViewComponent } from './views/new-book-view/new-book-view.component';
+import { ProfilViewComponent } from './views/profil/profil-view/profil-view.component';
 
 const routes: Routes = [
   // j'utilise la methode canActivate créer dans mon auth-guard pour 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'book/new', canActivate:[AuthGuardService], component: NewBookViewComponent },
   { path: 'book/edit/:id', canActivate:[AuthGuardService], component: EditBookViewComponent },
   { path: 'book/:id', canActivate:[AuthGuardService], component: BookViewComponent },
+  { path: 'profil/:id', canActivate:[AuthGuardService], component: ProfilViewComponent },
   { path: 'auth', component: AuthViewComponent },
   { path: 'not-found', component: ErrorViewComponent },
   //si l'utilisateur tape une url qui n'existe pas on redirige vers la page 404

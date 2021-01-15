@@ -13,7 +13,8 @@ import { AuthViewComponent } from './views/auth-view/auth-view.component';
 import { AuthService } from './services/auth/auth.service';
 import { NewBookViewComponent } from './views/new-book-view/new-book-view.component';
 import { EditBookViewComponent } from './views/edit-book-view/edit-book-view.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ProfilViewComponent } from './views/profil/profil-view/profil-view.component';
 
 
 @NgModule({
@@ -27,11 +28,13 @@ import {FormsModule} from '@angular/forms';
     AuthViewComponent,
     NewBookViewComponent,
     EditBookViewComponent,
+    ProfilViewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule
   ],
   // import de mes services
   providers: [BookService, AuthService],

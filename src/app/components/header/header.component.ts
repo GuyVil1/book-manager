@@ -9,22 +9,23 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  //Va me permettre de ne pas afficher le bouton si user non connecté
+  //Va me permettre de ne pas afficher les bouton si user non connecté
   isAuth: boolean;
 
-  constructor(private authService: AuthService, private router : Router) {
-    this.isAuth = true;
-   }
+  profilUrl: string;
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.isAuth = this.authService.isAuth;
 
+    this.profilUrl = '/profil/' + this.authService.userIdAuth;
   }
 
   /**
-   * Se déconnecter de l'app
+   * Method called when the user click on the signout button
    */
-  onClickSignOut(){
+  onClickSignOut() {
     this.authService.signOut();
     this.router.navigate(['auth']);
   }

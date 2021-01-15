@@ -1,15 +1,27 @@
 <div class="container text-center">
-    <h1>Book Manager</h1>
-    <a 
-        *ngIf="isAuth"
-        class="btn btn-dark float-left text-uppercase aligne"
-        routerLink="/book/new"
-        >NOUVEAU LIVRE</a>
 
-    <button 
-        *ngIf="isAuth"
-        class="btn btn-dark float-right text-uppercase aligne"
-        (click)="onClickSignOut()"
-        >Se déconnecter</button>    
-</div>
-<hr>
+    <div *ngIf="isAuth">
+  
+      <a
+        class="btn btn-dark float-left text-uppercase mt-2"
+        routerLink="/book/new">
+        NOUVEAU LIVRE
+      </a>
+  
+      <button
+        class="btn btn-dark float-right text-uppercase m-2"
+        (click)="onClickSignOut()">
+        DÉCONNEXION
+      </button>
+  
+      <a
+        class="btn btn-dark float-right text-uppercase m-2"
+        [routerLink]="profilUrl">
+        MON PROFIL
+      </a>
+    </div>
+  
+    <h1>Books Manager !</h1>
+  </div>
+  
+  <hr>
